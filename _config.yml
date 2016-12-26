@@ -24,7 +24,7 @@ github_username:  longlongjump
 
 # Build settings
 markdown: kramdown
-theme: jekyll-theme-lanyon
+#theme: jekyll-theme-lanyon
 gems:
   - jekyll-feed
   - jekyll-paginate
