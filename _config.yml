@@ -21,6 +21,8 @@ paginate_path: "/blog/page:num/"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  longlongjump
+url:              https://longlongjump.github.io
+baseurl:          /
 
 # Build settings
 markdown: kramdown
