@@ -1,0 +1,59 @@
+---
+layout: post
+title:  "Swift Function Generics Under the Hood"
+date:   2016-03-15 12:00:00 +0200
+categories: compiler generics swift
+---
+
+
+Generics are irreplaceable feature of Swift Language. They are used everywhere from Collections like Array and Dictionary to JSON data Serialization. Compiler team made really great work implementing them. So how generics work under the hood?
+
+What happens when you add generic parameter to function?
+
+Lets start with simple example:
+
+Function behave pretty ordinary on surface but when you call it will pass two arguments. First one in address of the value and second is its Type Metadata.
+
+Type Metadata keeps info about value type name, size, aligment etc.
+
+Normally debugger hides metadata argument but you can observe it suning lldb through registers.
+
+```
+(lldb) register read rdi // first argument
+rdi = 0x00007fff51b14d28 // pointer address
+(lldb) memory read -size 8 -format x -count 1 $rdi
+0x7fff51b14d28: 0x000000000000002a // 42
+(lldb) register read rsi // second argument
+rsi = 0x00000001106ff638 libswiftCore.dylib`direct type metadata for Swift.Int
+```
+
+So lets move to main purpose of the generics. What happens when you call same function with different value types?
+
+Compiler will still use same function and for each invocation it will pass value type metadata.
+
+Here is excerpt assembly generated for code above.
+
+As you can see all these times same function beeing called. `__TF4test4testurFq_T_` is is mangled name of func `foo<T>(val: T)`.
+
+All this strange names can be decrypted with command line:
+
+```
+$ xcrun swift-demangle __TMdSS
+__TMdSS — -> direct type metadata for Swift.String
+```
+# Protocols
+
+What happens if function generic type is constrained to some protocol? compiler just pass protocol witness table as third argument. This table is responsible to keep function pointers to type`s implementation of protocol.
+
+```
+(lldb) register read rdi // third argument
+rdx = 0x0000000106b85958 libswiftCore.dylib`protocol witness table for Swift.Int : Swift.Comparable in Swift
+```
+
+# Conclusion
+
+When I started to write code with swift generics for the first time I expected it to be more like C++. But C++ compiler generates specialized function for each type. On the other hand Swift compiler generates one universal function. Swift compiler can generate separate functons but only for optimization.
+
+This approach produces less fat binary, greatly increase compilation speed, makes type information available at runtime and many more but it also has some limitations.
+
+Here is one example of limitation. Swift version will call foo<T> for both String and Int values, but as C++ compliler create specialization for each type, first will be called foo(int val) and then foo<T>.
