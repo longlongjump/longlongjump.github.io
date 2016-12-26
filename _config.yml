@@ -15,14 +15,13 @@
 # in the templates via {{ site.myvariable }}.
 title: Eugene Ovchynnykov
 email: eugene.ovchynnykov@gmail.com
-paginate: 5
-paginate_path: "/blog/page:num/"
+paginate: 2
 #description: > #
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  longlongjump
-url:              https://longlongjump.github.io
-baseurl:          /
+#url:              https://longlongjump.github.io
+#baseurl:          /
 
 # Build settings
 markdown: kramdown
