@@ -15,6 +15,7 @@ gem "jekyll", "3.3.1"
 gem "minima", "~> 2.0"
 gem 'jekyll-paginate', '~> 1.1'
 gem 'jekyll-theme-lanyon', '~> 1.0'
+gem 'jekyll-sitemap'
 
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
