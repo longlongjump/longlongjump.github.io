@@ -7,8 +7,8 @@ tags: [coredata, core, data, swift, swift3, ios, ios10, database, sqlite3, sqlit
 description:  This article describes new Core Data API and also demystifies what actually happens with sqlite3 database while using query generation.
 ---
 
-iOS 10 does not only bring `NSPersistentContainer` to Core Data. But also very useful `NSQueryGenerationToken`.
-New API allows to fetch different snapshots of data in time. Developer can pin `NSManagedContext` to specific point in time and fetch unchanged data until context become unpinned or pined to different point.
+iOS 10 does not only brings `NSPersistentContainer` to Core Data. But also very useful `NSQueryGenerationToken`.
+New API allows to fetch different snapshots of data in time. Developer can pin `NSManagedObjectContext` to specific point in time and fetch unchanged data until context become unpinned or pined to different point.
 
 By default `NSManagedObjectContext` is unpinned. To pin context you need to set context generation token.
 
