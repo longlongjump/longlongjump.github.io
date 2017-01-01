@@ -6,6 +6,7 @@ categories: ios
 tags: [UIKit, UITableView, UITableViewCell, UITableViewRowAction, SWTableViewCell, ios, swipe, Xcode]
 ---
 
+![SWTableViewCell](/assets/posts/2016-03-09-swipe-cell/cell-swipe.gif){: .img-responsive }
 
 In my current project, I found that `UITableViewRowAction` does not match my needs anymore. I need much more than simple button with title. Github has tons of libraries that can add swipe options for cell:
 
@@ -21,9 +22,11 @@ I started researching SWTableViewCell code. SWTableViewCell replaces contentView
 
 My solution is not to touch `contentView` at all . I created new distinct view to hold cell elements and assign it to `slideContentView` variable. Then I place `slideContentView` with all option buttons inside `UISrollView` which is subview of contentView. This approach is more clean in sense of implementation and keeps layout safe from unexpected frame changes.
 
+![SWTableViewCell](/assets/posts/2016-03-09-swipe-cell/ib.png){: .img-responsive }
 
 After cell initialization, layout looks like this.
 
+![SWTableViewCell Layout](/assets/posts/2016-03-09-swipe-cell/layout.png){: .img-responsive }
 
 Dashed lines show visible part of cell
 ## Cell Selection

@@ -14,7 +14,7 @@ It implements _root saving context_ design pattern
 
 `Background root saving context <-> Default Main Context <-> Child Worker`
 
-![image-title-here](/assets/posts/2016-12-25-core-data-ios-10-swift-swift/core-data-stack.jpg){:class="img-responsive"}
+![image-title-here](/assets/posts/2016-12-25-core-data-ios-10-swift-swift/core-data-stack.jpg){: .img-responsive }
 
 It is good when saving operations run on background thread. However this setup is not always produce great performance. Because of parent-child context chain main UI thread can be locked during heavy writes in background context.
 

@@ -32,6 +32,6 @@ SQLite snapshots records the state of a WAL mode database for some specific poin
 
 Before first read Core Data gets snapshot of current state with `sqlite3_snapshot_get` and on each fetch it adopts this snapshot to get historical version of data using `sqlite3_snapshot_open`.
 
-![Core Data Opens Snapshot](/assets/posts/2017-01-02-core-data-query-generation/shapshot_open.png)
+![Core Data Opens Snapshot](/assets/posts/2017-01-02-core-data-query-generation/shapshot_open.png){: .img-responsive }
 
 It was unexpected for me to found that snapshotting is actually **experimental** [SQLite 3 API](https://www.sqlite.org/c3ref/snapshot.html).
