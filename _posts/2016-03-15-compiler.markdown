@@ -3,6 +3,7 @@ layout: post
 title:  "Swift Function Generics Under the Hood"
 date:   2016-03-15 12:00:00 +0200
 categories: compiler generics swift
+tags: [generics, swift, ios, compiler, Xcode]
 ---
 
 

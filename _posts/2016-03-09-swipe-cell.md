@@ -3,6 +3,7 @@ layout: post
 title:  "Swipeable buttons inside UITableViewCell"
 date:   2016-03-09 12:00:00 +0200
 categories: ios
+tags: [UIKit, UITableView, UITableViewCell, UITableViewRowAction, SWTableViewCell, ios, swipe, Xcode]
 ---
 
 

@@ -3,6 +3,7 @@ layout: post
 title:  "Core Data in iOS 10"
 date:   2016-12-25 23:04:38 +0200
 categories: coredata ios swift swift3
+tags: [coredata, core, data, swift, swift3, ios, ios10, database, NSPersistentContainer, NSManagedContext, stack, xcode]
 ---
 
 CoreData always was first option for storing and fetching data in iOS and macOS. It has many cool features that comes for free like visual model editor, auto-migrations, model versioning etc. Using Core Data contexts developer can fetch and save records in multithreaded environment. Core Data can efficiently load record only when developer actually need it to reduce memory consumption.
