@@ -10,6 +10,8 @@ Hello, I’m Eugene Ovchynnykov.
 
 I develop iOS apps, and I like to share my experience in this blog.
 
+[My CV](/assets/EugenOvchynnykovResume.pdf)
+
 If you want to contact me you can reach me at this email:
 
 {{ site.email }}
