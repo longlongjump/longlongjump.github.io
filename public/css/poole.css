@@ -52,11 +52,32 @@ html {
   font-size: 16px;
   line-height: 1.5;
 }
-@media (min-width: 31rem) {
-  html {
-    font-size: 20px;
-  }
+
+@media all and (min-width:640px) {
+    html {
+        font-size: 118.75%
+    }
 }
+
+@media all and (min-width:1100px) {
+    html {
+        font-size: 131.25%
+    }
+}
+
+@media all and (min-width:1800px) {
+    html {
+        font-size: 150%
+    }
+}
+
+@media all and (min-width:2800px) {
+    html {
+        font-size: 162.5%
+    }
+}
+
+
 
 body {
   color: #515151;
@@ -174,10 +195,6 @@ pre code {
   font-size: 100%;
   color: inherit;
   background-color: transparent;
-}
-
-code {
-  overflow: scroll;
 }
 
 .highlight {
