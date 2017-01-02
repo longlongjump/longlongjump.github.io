@@ -175,6 +175,11 @@ pre code {
   color: inherit;
   background-color: transparent;
 }
+
+code {
+  overflow: scroll;
+}
+
 .highlight {
   margin-bottom: 1rem;
   border-radius: 4px;

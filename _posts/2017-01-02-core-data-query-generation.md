@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Core Data in iOS 10: NSQueryGenerationToken"
-date:   2017-01-02 12:04:38 +0200
+date:   2017-01-02 00:04:38 +0200
 categories: ios coredata  
 tags: [coredata, core, data, swift, swift3, ios, ios10, database, sqlite3, sqlite, NSPersistentContainer, NSQueryGenerationToken, xcode]
 description:  This article describes new Core Data API and also demystifies what actually happens with sqlite3 database while using query generation.
