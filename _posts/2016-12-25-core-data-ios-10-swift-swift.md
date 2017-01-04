@@ -61,6 +61,7 @@ After you turn on context starts to observe any save notification both from its 
 
 Be aware that default merge policy type for `viewContext` is `NSMergePolicy.errorMergePolicyType`.
 To automatically handle merge conflicts while saving viewContext I suggest to set merge policy to `mergeByPropertyStoreTrump`. It will prioritize store changes over in-memory while saving.
+
 ```
 viewContext.mergePolicy = NSMergePolicy.mergeByPropertyStoreTrump
 ```
