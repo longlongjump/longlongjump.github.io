@@ -59,4 +59,10 @@ To sync changes back to main `viewContext` you should turn on `automaticallyMerg
 
 After you turn on context starts to observe any save notification both from its parentContext and persistentStoreCoordinator. Because `NSPersistentContainer` sets same persistentStoreCoordinator for each context new changes will be forwarded to `viewContext`.
 
-Be aware that default merge policy for `viewContext` is `mergeByPropertyObjectTrumpMergePolicyType`. Merge policy will prioritize any local in-memory changes over store while saving.
+Be aware that default merge policy type for `viewContext` is `NSMergePolicy.errorMergePolicyType`.
+To automatically handle merge conflicts while saving viewContext I suggest to set merge policy to `mergeByPropertyStoreTrump`. It will prioritize store changes over in-memory while saving.
+```
+viewContext.mergePolicy = NSMergePolicy.mergeByPropertyStoreTrump
+```
+
+For background import context you may want to choose `NSMergePolicy.mergeByPropertyObjectTrump`.
