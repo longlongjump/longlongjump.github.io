@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "What is new in Alamofire 5.0"
+title:  "What’s  new in Alamofire 5.0"
 date:   2019-01-07 18:00:01 +0200
 categories: ios
 tags: [Alamofire, swift, Networking, UrlSession, ios, swipe, Xcode]
