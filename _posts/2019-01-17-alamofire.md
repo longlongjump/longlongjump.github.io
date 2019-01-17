@@ -6,9 +6,9 @@ categories: ios
 tags: [Alamofire, swift, Networking, UrlSession, ios, swipe, Xcode]
 ---
 
-Alamofire 5.0 beta was released on December but there are still not much examples of new features.
+Alamofire 5.0 beta was released on December but there are still not many examples of new features.
 
-So I decided to investigate all updates myself and check how they align with my exsiting code.
+So I decided to investigate all updates myself and check how they align with my existing code.
 
 
 ## ParameterEncoder with support of Encodable params
@@ -120,29 +120,29 @@ NotificationCenter.default.addObserver(
 
 ```
 @objc private func networkRequestDidComplete(notification: Notification) {
-       guard let alamofireRequest = notification.request,
-           let task = alamofireRequest.task,
-           let request = task.originalRequest,
-           let httpMethod = request.httpMethod,
-           let requestURL = request.url
+       guard
+              let request = notification.request,
+              let urlRequest = request.request
+              let httpMethod = urlRequest.httpMethod,
+              let requestURL = urlRequest.url
            else {
                return
        }
 
       print("\(String(response.statusCode)) '\(requestURL.absoluteString)'")
 
-       if let data = (alamofireRequest as? DataRequest)?.data  {
+       if let data = (request as? DataRequest)?.data  {
          logData(data: data)
       }       
 }
 ```
 
-You can also adopt `EventMonitor` protocol and and implement you custom `Session` monitoring yourself.
+You can also adopt `EventMonitor` protocol and and implement your custom `Session` monitoring yourself.
 
 ```
 final class SessionMonitor: EventMonitor {
     func request(_ request: Alamofire.Request, didCompleteTask task: URLSessionTask, with error: Error?) {
-        debugPrint(request.request!.url!.absoluteString)
+        debugPrint(request.request?.url?.absoluteString ?? "")
     }
 }
 
@@ -154,4 +154,4 @@ let session = Session(eventMonitors: [SessionMonitor()])
 
 `RequestAdapter` became more flexible. You can now update request asynchronously or even discard request if something is wrong.
 
-`RequestRetrier` is also useful it can retry failed request if server is not available at the moment or API access token need to be refreshed. Asynchronously as well.
+`RequestRetrier` is also useful it can retry failed request if server is not available at the moment or API access token needs to be refreshed. Asynchronously as well.
